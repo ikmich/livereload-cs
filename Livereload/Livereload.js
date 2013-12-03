@@ -31,7 +31,7 @@
 		{
 			function reloadCheck()
 			{
-				$.get(ROOT_DIR + '/LiveReload/LiveReload.aspx', function (response)
+				$.get(ROOT_DIR + 'LiveReload/LiveReload.aspx', function (response)
 				{
 					if (RESULT_MODIFIED === response)
 					{
@@ -49,7 +49,7 @@
 		// jQuery not available. Load it dynamically.
 		var head = document.getElementsByTagName('head')[0];
 		var scrJq = document.createElement('script');
-		scrJq.src = 'LiveReload/jquery-1.8.0.min.js';
+		scrJq.src = ROOT_DIR + 'LiveReload/jquery-1.8.0.min.js';
 		head.insertBefore(scrJq, head.getElementsByTagName('script')[0]);
 
 		// Start livereload after the jQuery script has loaded.
