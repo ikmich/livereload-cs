@@ -1,0 +1,37 @@
+Livereload automatically refreshes your web app or web site page when you save file changes. With Livereload, you can have your web site/app page reload automatically when you save a file after a change. Manual refreshing can be a chore and a time killer most especially when you are making "try-observe-try" modifications, or you have a short deadline.
+
+# USAGE
+================================================================================
+1.	Extract the downloaded package. The following folders should be present there:
+	-> /bin
+	-> /Livereload
+	
+	
+2.	In your .NET website or app project, reference 'LivereloadCS.dll'.
+
+		->	Right-click on "References" in the Solution Explorer.
+		-> 	Click 'Add Reference...'
+		->	Browse to /bin/LivereloadCS.dll and select it; click OK.
+
+
+3.	Copy the '/Livereload' folder to your site root.
+
+
+4.	Setup 'Livereload.js' (on your master page or on every page on which you want Livereload to be active). 
+		
+		4.1.	Define a global Javascript variable, ROOT_DIR, and set its value to the site root (e.g below). This should be done BEFORE the script tag that would reference 'Livereload.js'.
+		4.2.	Use a HTML <script> tag to reference 'Livereload.js'.
+	
+	Example:
+		<script type="text/javascript">
+			ROOT_DIR = '<%= ResolveClientUrl("~/") %>';  //Set ROOT_DIR to the site root.
+		</script>
+		<script type="text/javascript" src="<%= ResolveClientUrl("~/Livereload/Livereload.js") %>"></script>
+
+		
+5.	[Optional] Edit "Livereload/Livereload.xml" to achieve any of the following intents: 
+	-> Specify the directory path to which you want to limit livereload.
+	-> Add directory and file paths (relative to your site root) that you want livereload to ignore when checking for changes.
+
+	
+6.	Launch or reload your page to activate Livereload.
