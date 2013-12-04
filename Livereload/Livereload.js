@@ -14,7 +14,7 @@
 	*/
 	if (typeof ROOT_DIR == 'undefined')
 	{
-		var msg = "ROOT_DIR variable not defined.";
+		var msg = "Global ROOT_DIR variable not defined in page.";
 		alert(msg);
 		throw new Error(msg);
 	}
@@ -58,10 +58,10 @@
 			livereload();
 		});
 
-		// If the dynamic jQuery loading failed.
+		// If the dynamic jQuery loading failed for some reason (maybe a wrong path).
 		scrJq.addEventListener('error', function ()
 		{
-			var msg = "Livereload could not load jQuery";
+			var msg = "Livereload could not find/load jQuery";
 			alert(msg);
 			throw new Error(msg);
 		});

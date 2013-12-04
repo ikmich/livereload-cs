@@ -24,14 +24,14 @@ Livereload automatically refreshes your web app or web site page when you save f
 	
 	Example:
 		<script type="text/javascript">
-			ROOT_DIR = '<%= ResolveClientUrl("~/") %>';  //Set ROOT_DIR to the site root.
+			ROOT_DIR = '<%= ResolveClientUrl("~") %>';  //Set ROOT_DIR to the site root. NO TRALING SLASH.
 		</script>
 		<script type="text/javascript" src="<%= ResolveClientUrl("~/Livereload/Livereload.js") %>"></script>
 
 		
 5.	[Optional] Edit "Livereload/Livereload.xml" to achieve any of the following intents: 
-	-> Specify the directory path to which you want to limit livereload.
-	-> Add directory and file paths (relative to your site root) that you want livereload to ignore when checking for changes.
+	-> Specify the directory path to which you want to limit Livereload.
+	-> Add directory and file paths (relative to your site root) that you want Livereload to ignore when checking for changes.
 
 	
 6.	Launch or reload your page to activate Livereload.
